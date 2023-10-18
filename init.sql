@@ -1,16 +1,5 @@
-# Description
+\c app
 
-This project has the initial information of the database using PostgreSQL running in a docker container.
-
-# Database Name
-
-```
-app
-```
-
-# Database structure
-
-```
 CREATE TABLE Country (
     country_code CHAR(2) PRIMARY KEY,
     country_name VARCHAR(255) NOT NULL
@@ -34,15 +23,4 @@ CREATE TABLE County (
     population INT,
     FOREIGN KEY (state_id) REFERENCES State(state_id)
 );
-```
 
-# Run
-
-To run this project it is required to have Docker installed.
-
-```
-docker compose up -d
-```
-# Specifications
-
-This will start a container that is accesible in port `5432`.
