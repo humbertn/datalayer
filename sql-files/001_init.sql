@@ -5,22 +5,20 @@ CREATE TABLE Country (
     country_name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE State (
-    state_id SERIAL PRIMARY KEY,
-    country_code CHAR(2),
-    state VARCHAR(255) NOT NULL,
+CREATE TABLE State (    
+    state VARCHAR(255) PRIMARY KEY,
+    country_code CHAR(2),    
     population INT,
     counties INT,
     detail TEXT,
-    FOREIGN KEY (country_code) REFERENCES Country(country_code),
-    UNIQUE (state_id)
+    FOREIGN KEY (country_code) REFERENCES Country(country_code)
 );
 
 CREATE TABLE County (
     county_id SERIAL PRIMARY KEY,
-    state_id INT,
+    state VARCHAR(255),
     county VARCHAR(255) NOT NULL,
     population INT,
-    FOREIGN KEY (state_id) REFERENCES State(state_id)
+    FOREIGN KEY (state) REFERENCES State(state)
 );
 

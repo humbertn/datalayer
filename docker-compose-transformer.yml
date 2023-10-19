@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  node-app-transformer:
+    image: node:14
+    volumes:
+      - ./USA:/usr/src/app/USA
+      - ./sql-files:/usr/src/app/sql-files
+      - ./transformJsonFilesToInsertSQL.js:/usr/src/app/script.js
+    working_dir: /usr/src/app
+    command: ["node", "script.js"]

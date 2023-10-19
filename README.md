@@ -40,9 +40,18 @@ CREATE TABLE County (
 
 To run this project it is required to have Docker installed.
 
+First run the transformer to create the SQL files for each `state` on `/sql-files/*.sql`
+
 ```
-docker compose up -d
+docker compose -f docker-compose-transformer.yml up -d
 ```
+
+Now you can start the database
+
+```
+docker compose -f docker-compose-database.yml up -d
+```
+
 # Specifications
 
 This will start a container that is accesible in port `5432`.

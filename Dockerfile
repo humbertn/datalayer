@@ -1,3 +1,5 @@
 FROM postgres:latest
 
-COPY init.sql /docker-entrypoint-initdb.d/
+WORKDIR /docker-entrypoint-initdb.d
+
+COPY /sql-files/*.sql ./
