@@ -40,7 +40,7 @@ CREATE TABLE County (
 
 To run this project it is required to have Docker installed.
 
-First run the transformer to create the SQL files for each `state` on `/sql-files/*.sql`
+First run the transformer to create the SQL files for each `state` on `/sql-files/*.sql` (Required only in the first run)
 
 ```
 docker compose -f docker-compose-transformer.yml up -d
