@@ -5,9 +5,16 @@ services:
     build:
         context: .
         dockerfile: Dockerfile
+    container_name: postgres_db
     environment:
       - POSTGRES_DB=app
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=supersecretpassword
     ports:
       - 5432:5432
+    networks:
+      - country_network
+
+networks:
+  country_network:
+    driver: bridge
